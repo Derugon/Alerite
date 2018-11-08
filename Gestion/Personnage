@@ -1,0 +1,57 @@
+Lors de la création
+
+	-> choix de l'apparence via l'affichage => client
+	-> génération d'un type aléatoirement => client
+		-> envoie du l'apparence + type + nom au serveur
+		
+Lors de la connexion
+
+	-> Identifiant + mot de passe => client : envoie l'identifiant et mot de passe au serveur
+		-> demande d'accès a son personnage : entrer un code pin  => client : envoie le code pin au serveur
+			-> accès a son personnage : affichage In Game
+				envoie du serveur au client les paramaètres suivants : 
+						- nom
+						- type
+						- skills passif : nom + niveau + effet
+						- statistiques : nom + nombre de points
+						- fonction attribuée à chaque touche
+						- confrérie
+						- Eiras
+						
+Lors de l'augmentation des statistiques
+
+	-> Ouvrir la fenêtre de statistique => client
+	-> Paramètrage : via la fenêtre
+	-> envoie du nouveau nombre de la statistique au serveur quand appuie sur le bouton "valider"
+	
+Affichage des données vitales
+
+	-> barre de vie : affichage sur le client
+		a chaque modification : envoie au serveur
+	-> bare d'endurence : affichage sur le client
+		a chaque modification : envoie au serveur
+	-> .....
+	
+Affichage de l'interface ==> client
+
+Echange npc ~ joueur
+
+	->personnage utilise la fonction pour faire l'affichage de la fenêtre => client
+		-> lors de l'affichage : client envoie une demande au serveur pour savoir qu'est ce qui est disponible
+		-> serveur ; renvoie les objets pouvant être vendu + prix
+			-> a chaque modification de la liste des items disponibles : nouveau envoie du serveur vers le client
+			-> a chaque achat : envoie au serveur l'information que un nombre X d'item à été acheté
+			
+	Même système avec échange Joueur ~ Joueur
+	
+Fonction Vitale
+
+	-> Nourir : dégats du a la faim + régénération => client
+	
+	-> Laver : taux de "saleté" : client. Lors d'une demande d'échange => si le taux excède un certain seuil : demande non envoyé
+	
+	-> Soigner : client
+	
+	-> Sommeil : envoie les changement d'état au serveur
+	
+	-> Soif : client
